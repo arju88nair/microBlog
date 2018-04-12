@@ -8,16 +8,20 @@ use Redirect;
 use Input;
 use DateTime;
 
-class content extends Eloquent
+class blogs extends Eloquent
 {
     //
 
+    protected $fillable = ['title','content','imageUrl','category','authorName','authorPic','tags' ];
 
     public static function insertContent($request)
     {
+        //unofficial route to insert data to collection blogs
+
         $model = new self();
-        $model->name = "Fuck";
+        $model->fill($request);
         $model->save();
+
     }
 }
 

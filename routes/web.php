@@ -20,4 +20,4 @@ Route::get('blog', function () {
 });
 
 
-Route::get('insert','contentController@create');
+Route::post('insert','contentController@create');
