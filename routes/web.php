@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/','contentController@home');
 
 Route::get('blog', function () {
     return view('blog');
@@ -21,3 +19,4 @@ Route::get('blog', function () {
 
 
 Route::post('insert','contentController@create');
+

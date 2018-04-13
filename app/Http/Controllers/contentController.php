@@ -12,4 +12,11 @@ class contentController extends Controller
     {
         return blogs::insertContent($request->all());
     }
+
+
+    public static function home(Request $request)
+    {
+
+        return blogs::home();
+    }
 }

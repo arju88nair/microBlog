@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
-use View;
+use Illuminate\Support\Facades\View;
 use Redirect;
 use Input;
 use DateTime;
@@ -23,5 +23,16 @@ class blogs extends Eloquent
         $model->save();
 
     }
+
+    public static function home()
+    {
+        // Method to populate the homepage
+
+        $content = self::all();
+        return $content;
+        return View::make('blog')->with('data'.$content);
+
+    }
+
 }
 
