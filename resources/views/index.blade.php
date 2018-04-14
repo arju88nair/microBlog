@@ -55,21 +55,6 @@
     <div class="alert alert-warning" style="display: none">
         <strong>Sorry!</strong>Something went wrong! Please contact the administrator.
     </div>
-
-    {{--<br>--}}
-    {{--<form class="row">--}}
-        {{--<div class="form-group col-md-2">--}}
-            {{--<select class="form-control" id="sel1">--}}
-                {{--<option>All</option>--}}
-                {{--<option>Career</option>--}}
-                {{--<option>Culture</option>--}}
-                {{--<option>Compensation</option>--}}
-            {{--</select>--}}
-        {{--</div>--}}
-    {{--</form>--}}
-
-
-
     <div class="container px-0 py-4">
         <div class="pp-category-filter">
             <div class="row">

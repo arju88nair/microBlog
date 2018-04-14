@@ -8,7 +8,7 @@ use League\Flysystem\Config;
 
 class contentController extends Controller
 {
-    //
+
 
     public static function create(Request $request)
     {
@@ -29,5 +29,15 @@ class contentController extends Controller
             return response(array('success'=>false,'code' => config('statuscodes.MISSING_PARAMETER'),'message'=>config('statuscodes.MISSING_PARAMETER_MESSAGE')));
         }
         return blogs::getByCategory($request->all());
+    }
+
+    public static function paginate(Request $request)
+    {
+
+        if(!$request['page'] || !$request['category'])
+        {
+            return response(array('success'=>false,'code' => config('statuscodes.MISSING_PARAMETER'),'message'=>config('statuscodes.MISSING_PARAMETER_MESSAGE')));
+        }
+        return blogs::paginateCategory($request->all());
     }
 }

@@ -10,17 +10,14 @@ $(document).ready(function()
 
         $.ajax({
 
-            url: '/categoryscroll?page=' + count + "&cat=" + "{{category}}",
+            url: 'paginate?page=' + count + "&category=" + category,
             dataType: "json",
             success: function (data) {
-                String.prototype.trunc = String.prototype.trunc ||
-                    function (n) {
-                        return (this.length > n) ? this.substr(0, n - 1) + '&hellip;' : this;
-                    };
-                data = JSON.parse(data);
+                data=data.data
                 count = count + 20;
                 $.each(data, function (index, value) {
-
+                    template=populate(value);
+                    $('#data-div').append(template);
                 });
                 $('#loading').hide();
             }
@@ -30,7 +27,7 @@ $(document).ready(function()
     }
 
     function bindScroll() {
-        if ($(window).scrollTop() + $(window).height() > $(document).height() - 1500) {
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
             $(window).unbind('scroll');
             loadMore();
         }
@@ -75,7 +72,6 @@ function filterItems(filter) {
             $.each(content, function (i, item) {
                 template=populate(item);
                 $('#data-div').hide().append(template).fadeIn(400);
-
             });
 
         },

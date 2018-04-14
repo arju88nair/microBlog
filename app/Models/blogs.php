@@ -9,7 +9,7 @@ class blogs extends Eloquent
 {
     //
 
-    protected $fillable = ['title','content','imageUrl','category','authorName','authorPic','tags' ];
+    protected $fillable = ['title', 'content', 'imageUrl', 'category', 'authorName', 'authorPic', 'tags'];
 
     public static function insertContent($request)
     {
@@ -26,23 +26,41 @@ class blogs extends Eloquent
         // Method to populate the homepage
 
         $content = self::take(10)->get();
-        return View::make('index')->with('data',$content);
+        return View::make('index')->with('data', $content);
 
     }
 
-   public static function getByCategory($request)
+    public static function getByCategory($request)
     {
 
         // Method to get the data by category
 
-        $category=$request['category'];
-        if($category == 'all')
-        {
+        $category = $request['category'];
+        if ($category == 'all') {
             $content = self::take(10)->get();
-            return response(array('success'=>true,'code' => config('statuscodes.SUCCESS'),'message'=>config('statuscodes.SUCCESS_MESSAGE'),'data'=>$content));
+            return response(array('success' => true, 'code' => config('statuscodes.SUCCESS'), 'message' => config('statuscodes.SUCCESS_MESSAGE'), 'data' => $content));
         }
-        $content = self::where('category',$category)->take(10)->get();
-        return response(array('success'=>true,'code' => config('statuscodes.SUCCESS'),'message'=>config('statuscodes.SUCCESS_MESSAGE'),'data'=>$content));
+        $content = self::where('category', $category)->take(10)->get();
+        return response(array('success' => true, 'code' => config('statuscodes.SUCCESS'), 'message' => config('statuscodes.SUCCESS_MESSAGE'), 'data' => $content));
+
+    }
+
+
+    public static function paginateCategory($request)
+    {
+
+
+        // Method to get the data by category and page
+
+        $page = (int)$request['page'];
+        $category = $request['category'];
+        if ($category == 'all') {
+
+            $content = self::take(10)->skip($page)->get();
+            return response(array('success' => true, 'code' => config('statuscodes.SUCCESS'), 'message' => config('statuscodes.SUCCESS_MESSAGE'), 'data' => $content));
+        }
+        $content = self::where('category', $category)->take(10)->skip($page)->get();
+        return response(array('success' => true, 'code' => config('statuscodes.SUCCESS'), 'message' => config('statuscodes.SUCCESS_MESSAGE'), 'data' => $content));
 
     }
 
