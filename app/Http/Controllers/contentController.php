@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\blogs;
+use League\Flysystem\Config;
+
 class contentController extends Controller
 {
     //
@@ -16,7 +18,16 @@ class contentController extends Controller
 
     public static function home(Request $request)
     {
-
         return blogs::home();
+    }
+
+    public static function getByCategory(Request $request)
+    {
+
+        if(!$request['category'])
+        {
+            return response(array('success'=>false,'code' => config('statuscodes.MISSING_PARAMETER'),'message'=>config('statuscodes.MISSING_PARAMETER_MESSAGE')));
+        }
+        return blogs::getByCategory($request->all());
     }
 }

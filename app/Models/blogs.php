@@ -33,5 +33,15 @@ class blogs extends Eloquent
 
     }
 
+   public static function getByCategory($request)
+    {
+
+        // Method to populate the homepage
+        $cataegory=$request['category'];
+        $content = self::all();
+        return View::make('index')->with('data',$content);
+
+    }
+
 }
 

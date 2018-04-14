@@ -20,3 +20,5 @@ Route::get('blog', function () {
 
 Route::post('insert','contentController@create');
 
+Route::get('getByCategory','contentController@getByCategory');
+
