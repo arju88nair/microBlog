@@ -24,22 +24,15 @@ function filterItems(filter) {
             let content = data.data;
             $('#data-div').html('');
             $.each(content, function (i, item) {
-                let template='  <div class="col-lg-3 col-md-6 mb-4">\n' +
-                    '                <div class="card">\n' +
-                    '                    <img class="card-img-top" height="200px" src=' + item.imageUrl + ' alt="">\n' +
-                    '                    <h4 class="card-title" style="padding-top: 10px">' + item.title + '</h4>\n' +
-                    '\n' +
-                    '                    <div class="card-footer">\n' +
-                    '                        <a href="#" class="btn btn-primary">More!</a>\n' +
-                    '                    </div>\n' +
-                    '                </div>\n' +
-                    '            </div>';
+                template=populate(item);
                 $('#data-div').hide().append(template).fadeIn(400);
+
             });
 
             },
         error: function (request, error) {
             $(".alert-warning").show()
+
         }
     });
 
@@ -83,3 +76,18 @@ $(window).scroll(bindScroll);
 
 
 
+function populate(item)
+{
+    let template='  <div class="col-lg-3 col-md-6 mb-4">\n' +
+        '                <div class="card">\n' +
+        '                    <img class="card-img-top" height="200px" src=' + item.imageUrl + ' alt="">\n' +
+        '                    <h4 class="card-title" style="padding-top: 10px">' + item.title + '</h4>\n' +
+        '\n' +
+        '                    <div class="card-footer">\n' +
+        '                        <a href="#" class="btn btn-primary">More!</a>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '            </div>';
+
+return template;
+}
