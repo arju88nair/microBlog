@@ -14,7 +14,7 @@
 Route::get('/','contentController@home');
 
 Route::get('blog', function () {
-    return view('index');
+    return view('blog');
 });
 
 

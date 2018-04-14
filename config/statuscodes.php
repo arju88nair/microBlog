@@ -8,4 +8,6 @@
 return [
     'MISSING_PARAMETER' => 404,
     'MISSING_PARAMETER_MESSAGE' => 'Bad Request',
+    'SUCCESS' => '200',
+    'SUCCESS_MESSAGE' => 'Successfully completed',
 ];

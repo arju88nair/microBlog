@@ -36,10 +36,16 @@ class blogs extends Eloquent
    public static function getByCategory($request)
     {
 
-        // Method to populate the homepage
-        $cataegory=$request['category'];
-        $content = self::all();
-        return View::make('index')->with('data',$content);
+        // Method to get the data by category
+
+        $category=$request['category'];
+        if($category == 'all')
+        {
+            $content = self::all();
+            return response(array('success'=>true,'code' => config('statuscodes.SUCCESS'),'message'=>config('statuscodes.SUCCESS_MESSAGE'),'data'=>$content));
+        }
+        $content = self::where('category',$category)->get();
+        return response(array('success'=>true,'code' => config('statuscodes.SUCCESS'),'message'=>config('statuscodes.SUCCESS_MESSAGE'),'data'=>$content));
 
     }
 

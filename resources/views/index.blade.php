@@ -24,7 +24,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -50,16 +51,29 @@
 
 <!-- Page Content -->
 <div class="container">
+    {{--<br>--}}
+    {{--<form class="row">--}}
+        {{--<div class="form-group col-md-2">--}}
+            {{--<select class="form-control" id="sel1">--}}
+                {{--<option>All</option>--}}
+                {{--<option>Career</option>--}}
+                {{--<option>Culture</option>--}}
+                {{--<option>Compensation</option>--}}
+            {{--</select>--}}
+        {{--</div>--}}
+    {{--</form>--}}
 
-    {{--<!-- Jumbotron Header -->--}}
-    {{--<header class="jumbotron my-4">--}}
-        {{--<h1 class="display-3">A Warm Welcome!</h1>--}}
-        {{--<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>--}}
-        {{--<a href="#" class="btn btn-primary btn-lg">Call to action!</a>--}}
-    {{--</header>--}}
 
+
+    <div class="container px-0 py-4">
+        <div class="pp-category-filter">
+            <div class="row">
+                <div class="col-sm-12"><a class="btn btn-primary pp-filter-button" href="#" data-filter="all">All</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="Career">Career</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="Compensation">Compensation</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="Culture">Culture</a></div>
+            </div>
+        </div>
+    </div>
     <!-- Page Features -->
-    <div class="row text-center">
+    <div class="row text-center" id="data-div">
 
         @foreach ($data as $item)
 
@@ -73,126 +87,7 @@
                     </div>
                 </div>
             </div>
-
-
-
-
         @endforeach
-
-
-
-        {{--<div class="col-lg-3 col-md-6 mb-4">--}}
-            {{--<div class="card">--}}
-                {{--<img class="card-img-top" src="http://placehold.it/500x325" alt="">--}}
-                {{--<div class="card-body">--}}
-                    {{--<h4 class="card-title">Card title</h4>--}}
-                    {{--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>--}}
-                {{--</div>--}}
-                {{--<div class="card-footer">--}}
-                    {{--<a href="#" class="btn btn-primary">Find Out More!</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-        {{--<div class="col-lg-3 col-md-6 mb-4">--}}
-            {{--<div class="card">--}}
-                {{--<img class="card-img-top" src="http://placehold.it/500x325" alt="">--}}
-                {{--<div class="card-body">--}}
-                    {{--<h4 class="card-title">Card title</h4>--}}
-                    {{--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>--}}
-                {{--</div>--}}
-                {{--<div class="card-footer">--}}
-                    {{--<a href="#" class="btn btn-primary">Find Out More!</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-        {{--<div class="col-lg-3 col-md-6 mb-4">--}}
-            {{--<div class="card">--}}
-                {{--<img class="card-img-top" src="http://placehold.it/500x325" alt="">--}}
-                {{--<div class="card-body">--}}
-                    {{--<h4 class="card-title">Card title</h4>--}}
-                    {{--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>--}}
-                {{--</div>--}}
-                {{--<div class="card-footer">--}}
-                    {{--<a href="#" class="btn btn-primary">Find Out More!</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-        {{--<div class="col-lg-3 col-md-6 mb-4">--}}
-            {{--<div class="card">--}}
-                {{--<img class="card-img-top" src="http://placehold.it/500x325" alt="">--}}
-                {{--<div class="card-body">--}}
-                    {{--<h4 class="card-title">Card title</h4>--}}
-                    {{--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>--}}
-                {{--</div>--}}
-                {{--<div class="card-footer">--}}
-                    {{--<a href="#" class="btn btn-primary">Find Out More!</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        {{--<div class="col-lg-3 col-md-6 mb-4">--}}
-            {{--<div class="card">--}}
-                {{--<img class="card-img-top" src="http://placehold.it/500x325" alt="">--}}
-                {{--<div class="card-body">--}}
-                    {{--<h4 class="card-title">Card title</h4>--}}
-                    {{--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>--}}
-                {{--</div>--}}
-                {{--<div class="card-footer">--}}
-                    {{--<a href="#" class="btn btn-primary">Find Out More!</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        {{--<div class="col-lg-3 col-md-6 mb-4">--}}
-            {{--<div class="card">--}}
-                {{--<img class="card-img-top" src="http://placehold.it/500x325" alt="">--}}
-                {{--<div class="card-body">--}}
-                    {{--<h4 class="card-title">Card title</h4>--}}
-                    {{--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>--}}
-                {{--</div>--}}
-                {{--<div class="card-footer">--}}
-                    {{--<a href="#" class="btn btn-primary">Find Out More!</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        {{--<div class="col-lg-3 col-md-6 mb-4">--}}
-            {{--<div class="card">--}}
-                {{--<img class="card-img-top" src="http://placehold.it/500x325" alt="">--}}
-                {{--<div class="card-body">--}}
-                    {{--<h4 class="card-title">Card title</h4>--}}
-                    {{--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>--}}
-                {{--</div>--}}
-                {{--<div class="card-footer">--}}
-                    {{--<a href="#" class="btn btn-primary">Find Out More!</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        {{--<div class="col-lg-3 col-md-6 mb-4">--}}
-            {{--<div class="card">--}}
-                {{--<img class="card-img-top" src="http://placehold.it/500x325" alt="">--}}
-                {{--<div class="card-body">--}}
-                    {{--<h4 class="card-title">Card title</h4>--}}
-                    {{--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>--}}
-                {{--</div>--}}
-                {{--<div class="card-footer">--}}
-                    {{--<a href="#" class="btn btn-primary">Find Out More!</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        {{--<div class="col-lg-3 col-md-6 mb-4">--}}
-            {{--<div class="card">--}}
-                {{--<img class="card-img-top" src="http://placehold.it/500x325" alt="">--}}
-                {{--<div class="card-body">--}}
-                    {{--<h4 class="card-title">Card title</h4>--}}
-                    {{--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>--}}
-                {{--</div>--}}
-                {{--<div class="card-footer">--}}
-                    {{--<a href="#" class="btn btn-primary">Find Out More!</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
 
     </div>
     <!-- /.row -->
@@ -211,6 +106,8 @@
 <!-- Bootstrap core JavaScript -->
 <script src="{{ asset('jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('jquery/main.js') }}"></script>
+
 
 </body>
 

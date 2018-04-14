@@ -18,6 +18,15 @@ body {
   border-bottom: thick solid lightblue;
 }
 
+.pp-category-filter a {
+    display: inline-block;
+    margin: 0 10px 6px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
 
 
 
