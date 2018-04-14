@@ -89,7 +89,7 @@ function populate(item)
     let template='  <div class="col-lg-3 col-md-6 mb-4">\n' +
         '                <div class="card">\n' +
         '                    <img class="card-img-top" height="200px" src=' + item.imageUrl + ' alt="">\n' +
-        '                    <h4 class="card-title" style="padding-top: 10px">' + item.title + '</h4>\n' +
+        '                    <h5 class="card-title" style="padding-top: 10px">' + item.title + '</h5>\n' +
         '\n' +
         '                    <div class="card-footer">\n' +
         '                        <a href="#" class="btn btn-primary">More!</a>\n' +
