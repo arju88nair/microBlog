@@ -51,6 +51,11 @@
 
 <!-- Page Content -->
 <div class="container">
+    <br>
+    <div class="alert alert-warning" style="display: none">
+        <strong>Sorry!</strong>Something went wrong! Please contact the administrator.
+    </div>
+
     {{--<br>--}}
     {{--<form class="row">--}}
         {{--<div class="form-group col-md-2">--}}

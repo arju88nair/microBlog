@@ -20,6 +20,7 @@ function filterItems(filter) {
         },
         dataType: 'json',
         success: function (data) {
+            $(".alert-warning").hide()
             let content = data.data;
             $('#data-div').html('');
             $.each(content, function (i, item) {
@@ -38,9 +39,47 @@ function filterItems(filter) {
 
             },
         error: function (request, error) {
-            // alert("Request: " + JSON.stringify(request));
+            $(".alert-warning").show()
         }
     });
 
 }
+
+
+var count = 10
+
+function loadMore() {
+    console.log("More loaded" + count);
+
+    $.ajax({
+
+        url: '/categoryscroll?page=' + count + "&cat=" + "{{category}}",
+        dataType: "json",
+        success: function (data) {
+            String.prototype.trunc = String.prototype.trunc ||
+                function (n) {
+                    return (this.length > n) ? this.substr(0, n - 1) + '&hellip;' : this;
+                };
+            data = JSON.parse(data)
+            count = count + 20
+            $.each(data, function (index, value) {
+
+            });
+            $('#loading').hide();
+        }
+    });
+
+    $(window).bind('scroll', bindScroll);
+}
+
+function bindScroll() {
+    if ($(window).scrollTop() + $(window).height() > $(document).height() - 1500) {
+        $(window).unbind('scroll');
+        loadMore();
+    }
+}
+
+$(window).scroll(bindScroll);
+
+
 
