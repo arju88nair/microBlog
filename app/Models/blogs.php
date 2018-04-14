@@ -29,8 +29,7 @@ class blogs extends Eloquent
         // Method to populate the homepage
 
         $content = self::all();
-        return $content;
-        return View::make('blog')->with('data'.$content);
+        return View::make('index')->with('data',$content);
 
     }
 

@@ -4515,6 +4515,7 @@ tbody.collapse.show {
 }
 
 .card-title {
+  padding-top: 10px;
   margin-bottom: 0.75rem;
 }
 
