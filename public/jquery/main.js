@@ -23,7 +23,7 @@ function filterItems(filter) {
             let content = data.data;
             $('#data-div').html('');
             $.each(content, function (i, item) {
-                $('#data-div').append('  <div class="col-lg-3 col-md-6 mb-4">\n' +
+                let template='  <div class="col-lg-3 col-md-6 mb-4">\n' +
                     '                <div class="card">\n' +
                     '                    <img class="card-img-top" height="200px" src=' + item.imageUrl + ' alt="">\n' +
                     '                    <h4 class="card-title" style="padding-top: 10px">' + item.title + '</h4>\n' +
@@ -32,7 +32,9 @@ function filterItems(filter) {
                     '                        <a href="#" class="btn btn-primary">More!</a>\n' +
                     '                    </div>\n' +
                     '                </div>\n' +
-                    '            </div>');
+                    '            </div>';
+                // $('#data-div').append().fadeIn(2000);
+                $('#data-div').hide().append(template).fadeIn(400);
             });
 
             },

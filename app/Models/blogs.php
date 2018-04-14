@@ -4,9 +4,6 @@ namespace App\Models;
 
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 use Illuminate\Support\Facades\View;
-use Redirect;
-use Input;
-use DateTime;
 
 class blogs extends Eloquent
 {
