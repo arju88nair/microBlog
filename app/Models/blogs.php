@@ -25,7 +25,7 @@ class blogs extends Eloquent
     {
         // Method to populate the homepage
 
-        $content = self::all();
+        $content = self::take(10)->get();
         return View::make('index')->with('data',$content);
 
     }
@@ -38,10 +38,10 @@ class blogs extends Eloquent
         $category=$request['category'];
         if($category == 'all')
         {
-            $content = self::all();
+            $content = self::take(10)->get();
             return response(array('success'=>true,'code' => config('statuscodes.SUCCESS'),'message'=>config('statuscodes.SUCCESS_MESSAGE'),'data'=>$content));
         }
-        $content = self::where('category',$category)->get();
+        $content = self::where('category',$category)->take(10)->get();
         return response(array('success'=>true,'code' => config('statuscodes.SUCCESS'),'message'=>config('statuscodes.SUCCESS_MESSAGE'),'data'=>$content));
 
     }

@@ -33,7 +33,6 @@ function filterItems(filter) {
                     '                    </div>\n' +
                     '                </div>\n' +
                     '            </div>';
-                // $('#data-div').append().fadeIn(2000);
                 $('#data-div').hide().append(template).fadeIn(400);
             });
 
@@ -45,33 +44,3 @@ function filterItems(filter) {
 
 }
 
-// if(filter === activeFilter) {
-//   return;
-// }
-//
-// activeFilter = filter;
-// $('.pp-gallery .card').each(function () {
-//   var card = $(this);
-//   var groups = card.data("groups");
-//   var show = false;
-//   if(filter === 'all') {
-//     show = true;
-//   }
-//   else {
-//     for(var i = 0; i < groups.length; i ++) {
-//       if(groups[i] === filter) {
-//         show = true;
-//       }
-//     }
-//   }
-//   // hide everything first
-//   card.fadeOut(400);
-//
-//   setTimeout(function() {
-//     if(show && !card.is(":visible")) {
-//         card.fadeIn(400)
-//       }
-//     }, 500);
-// });
-
-//
