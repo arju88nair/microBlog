@@ -24,3 +24,5 @@ Route::get('getByCategory','contentController@getByCategory');
 
 Route::get('paginate','contentController@paginate');
 
+Route::get('detail','contentController@detail');
+

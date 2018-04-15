@@ -59,7 +59,7 @@
                     <img class="card-img-top" height="200px" src="{{$item->imageUrl}}" alt="">
                     <h5 class="card-title" style="padding: 10px;font-size: 1rem;  overflow: hidden; text-overflow: ellipsis;white-space: nowrap; overflow: hidden;  text-overflow: ellipsis;">{{$item->title}}</h5>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">More!</a>
+                        <a href="detail?id={{$item->_id}}" class="btn btn-primary">More!</a>
                     </div>
                 </div>
             </div>

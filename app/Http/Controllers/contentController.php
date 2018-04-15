@@ -40,4 +40,14 @@ class contentController extends Controller
         }
         return blogs::paginateCategory($request->all());
     }
+
+    public static function detail(Request $request)
+    {
+
+        if(!$request['id'] )
+        {
+            return response(array('success'=>false,'code' => config('statuscodes.MISSING_PARAMETER'),'message'=>config('statuscodes.MISSING_PARAMETER_MESSAGE')));
+        }
+        return blogs::detail($request->all());
+    }
 }

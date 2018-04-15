@@ -64,5 +64,18 @@ class blogs extends Eloquent
 
     }
 
+    public static function detail($request)
+    {
+
+
+        // Method to get the data by category and page
+
+        $id = $request['id'];
+
+        $content = self::find($id);
+        return View::make('detail')->with('data', $content);
+
+    }
+
 }
 
