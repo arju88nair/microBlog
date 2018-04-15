@@ -92,7 +92,7 @@ function populate(item)
         '                    <h5 class="card-title" style="padding: 10px;font-size: 1rem;  overflow: hidden; text-overflow: ellipsis;white-space: nowrap; overflow: hidden;  text-overflow: ellipsis;">' + item.title + '</h5>\n' +
         '\n' +
         '                    <div class="card-footer">\n' +
-        '                        <a href="#" class="btn btn-primary">More!</a>\n' +
+        '                        <a href="detail?id="+' + item.imageUrl + ' class="btn btn-primary">More!</a>\n' +
         '                    </div>\n' +
         '                </div>\n' +
         '            </div>';
