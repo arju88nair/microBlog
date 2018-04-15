@@ -41,7 +41,11 @@
     <div class="container px-0 py-4">
         <div class="pp-category-filter">
             <div class="row">
-                <div class="col-sm-12"><a class="btn btn-primary pp-filter-button" href="#" data-filter="all">All</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="Career">Career</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="Compensation">Compensation</a><a class="btn btn-outline-primary pp-filter-button" href="#" data-filter="Culture">Culture</a></div>
+                <div class="col-sm-12"><a class="btn btn-primary pp-filter-button" href="#" data-filter="all">All</a><a
+                            class="btn btn-outline-primary pp-filter-button" href="#" data-filter="Career">Career</a><a
+                            class="btn btn-outline-primary pp-filter-button" href="#" data-filter="Compensation">Compensation</a><a
+                            class="btn btn-outline-primary pp-filter-button" href="#" data-filter="Culture">Culture</a>
+                </div>
             </div>
         </div>
     </div>
@@ -53,8 +57,7 @@
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card">
                     <img class="card-img-top" height="200px" src="{{$item->imageUrl}}" alt="">
-                    <h5 class="card-title" style="padding-top: 10px">{{$item->title}}</h4>
-
+                    <h5 class="card-title" style="padding: 10px;font-size: 1rem;  overflow: hidden; text-overflow: ellipsis;white-space: nowrap; overflow: hidden;  text-overflow: ellipsis;">{{$item->title}}</h5>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary">More!</a>
                     </div>
