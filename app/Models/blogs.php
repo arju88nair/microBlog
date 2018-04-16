@@ -50,12 +50,11 @@ class blogs extends Eloquent
     {
 
 
-        // Method to get the data by category and page
+        // Paginting data for lazyload
 
         $page = (int)$request['page'];
         $category = $request['category'];
         if ($category == 'all') {
-
             $content = self::take(10)->skip($page)->get();
             return response(array('success' => true, 'code' => config('statuscodes.SUCCESS'), 'message' => config('statuscodes.SUCCESS_MESSAGE'), 'data' => $content));
         }

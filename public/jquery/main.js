@@ -6,15 +6,15 @@ $(document).ready(function()
     let count = 10;
 
     function loadMore() {
-        console.log("More loaded" + category);
+        console.log("More loaded " + count);
 
         $.ajax({
 
             url: 'paginate?page=' + count + "&category=" + category,
             dataType: "json",
             success: function (data) {
-                data=data.data
-                count = count + 20;
+                data=data.data;
+                count = count + 10;
                 $.each(data, function (index, value) {
                     template=populate(value);
                     $('#data-div').append(template);
@@ -49,6 +49,7 @@ $(document).ready(function()
         button.addClass('btn-primary');
         category=button.data("filter");
         filterItems(button.data("filter"));
+        count=10;
         e.preventDefault();
     })
 
@@ -86,7 +87,8 @@ function filterItems(filter) {
 
 function populate(item)
 {
-    let template='  <div class="col-lg-3 col-md-6 mb-4">\n' +
+    let template='';
+    template='  <div class="col-lg-3 col-md-6 mb-4">\n' +
         '                <div class="card">\n' +
         '                    <img class="card-img-top" height="200px" src=' + item.imageUrl + ' alt="">\n' +
         '                    <h5 class="card-title" style="padding: 10px;font-size: 1rem;  overflow: hidden; text-overflow: ellipsis;white-space: nowrap; overflow: hidden;  text-overflow: ellipsis;">' + item.title + '</h5>\n' +
