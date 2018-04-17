@@ -1,6 +1,8 @@
 ##Requirements
-PHP >= 5.6
-MongoDB >= 3.4
+
+PHP >= 5.6, 
+MongoDB >= 3.4,
+Laravel = 5.4.*
 
 ## Blog
 Just a crude micro blog setup done on Laravel and MongoDB with Bootstrapped frontend
