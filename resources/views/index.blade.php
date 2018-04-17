@@ -65,7 +65,10 @@
             </div>
         @endforeach
 
+
     </div>
+    <img class="img-responsive" id="loader" style="margin-left: 50%; width: 5%; padding-bottom: 3%;" src="{{ asset('images/ajax-loader.gif')}}">
+
     <!-- /.row -->
 
 </div>

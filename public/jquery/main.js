@@ -19,8 +19,9 @@ $(document).ready(function()
                     template=populate(value);
                     $('#data-div').append(template);
                 });
-                $('#loading').hide();
-            }
+                $('#loader').hide();
+
+            },
         });
 
         $(window).bind('scroll', bindScroll);
@@ -42,7 +43,7 @@ $(document).ready(function()
         // remove btn-primary from all buttons first
         $('.pp-filter-button').removeClass('btn-primary');
         $('.pp-filter-button').addClass('btn-outline-primary');
-
+        $('#loader').show();
         // add btn-primary to active button
         let button = $(this);
         button.removeClass('btn-outline-primary');
@@ -75,9 +76,14 @@ function filterItems(filter) {
                 $('#data-div').hide().append(template).fadeIn(400);
             });
 
+
         },
         error: function (request, error) {
             $(".alert-warning").show();
+            $('#loader').hide();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+
 
         }
     });
