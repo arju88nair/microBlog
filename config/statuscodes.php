@@ -10,4 +10,6 @@ return [
     'MISSING_PARAMETER_MESSAGE' => 'Bad Request',
     'SUCCESS' => '200',
     'SUCCESS_MESSAGE' => 'Successfully completed',
+    'FAILURE' => 404,
+    'FAILURE_MESSAGE' => 'Requested data not found',
 ];

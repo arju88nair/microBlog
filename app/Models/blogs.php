@@ -50,7 +50,7 @@ class blogs extends Eloquent
     {
 
 
-        // Paginting data for lazyload
+        // Paginating data for lazyload
 
         $page = (int)$request['page'];
         $category = $request['category'];
@@ -67,12 +67,16 @@ class blogs extends Eloquent
     {
 
 
-        // Method to get the data by category and page
+        // Getting the detailed view of an entry by id
 
         $id = $request['id'];
-
         $content = self::find($id);
-        return View::make('detail')->with('data', $content);
+        if($content)
+        {
+            return View::make('detail')->with('data', $content);
+
+        }
+        return response(array('success' => false, 'code' => config('statuscodes.FAILURE'), 'message' => config('statuscodes.FAILURE_MESSAGE')));
 
     }
 

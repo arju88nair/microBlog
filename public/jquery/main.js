@@ -93,6 +93,7 @@ function filterItems(filter) {
 
 function populate(item)
 {
+    console.log(item)
     let template='';
     template='  <div class="col-lg-3 col-md-6 mb-4">\n' +
         '                <div class="card">\n' +
@@ -100,7 +101,7 @@ function populate(item)
         '                    <h5 class="card-title" style="padding: 10px;font-size: 1rem;  overflow: hidden; text-overflow: ellipsis;white-space: nowrap; overflow: hidden;  text-overflow: ellipsis;">' + item.title + '</h5>\n' +
         '\n' +
         '                    <div class="card-footer">\n' +
-        '                        <a href="detail?id="+' + item.imageUrl + ' class="btn btn-primary">More!</a>\n' +
+        '                        <a href="detail?id='+item._id+'" class="btn btn-primary">More!</a>\n' +
         '                    </div>\n' +
         '                </div>\n' +
         '            </div>';

@@ -13,11 +13,6 @@
 
 Route::get('/','contentController@home');
 
-Route::get('blog', function () {
-    return view('blog');
-});
-
-
 Route::post('insert','contentController@create');
 
 Route::get('getByCategory','contentController@getByCategory');
