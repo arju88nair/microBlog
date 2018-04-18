@@ -6,11 +6,11 @@ Laravel = 5.4.*
 
 ## Blog
 Just a crude micro blog setup done on Laravel and MongoDB with Bootstrapped frontend
-Resides in http://hush.thenair.tk/
+which resides in http://hush.thenair.tk/
 
 ## Installation and setup
 * Install Composer 
-* Since it depends upon MongoDB,we use life saver[Jenssegers MongoDB Driver](https://github.com/jenssegers/Laravel-MongoDB)
+* Since it depends upon MongoDB,we use life saver, [Jenssegers MongoDB Driver](https://github.com/jenssegers/Laravel-MongoDB)
 * Have to make sure you have the MongoDB PHP driver installed. You can find installation instructions at http://php.net/manual/en/mongodb.installation.php 
 * Clone project: `git clone https://github.com/arju88nair/microBlog `
 * Install dependencies: `composer install`
